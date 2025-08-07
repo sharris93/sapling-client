@@ -1,0 +1,8 @@
+.loading-page {
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-page img {
+  width: 35px;
+}

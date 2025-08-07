@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+#hero h1 {
+  max-width: 650px;
+}
+
 #hero p {
   width: 80%;
   max-width: 500px;
