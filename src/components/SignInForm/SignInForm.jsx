@@ -2,7 +2,6 @@ import { signIn } from '../../services/users'
 import './SignInForm.css'
 import { useState, useContext } from 'react'
 import { setToken, getUser } from '../../utils/auth'
-import { useNavigate } from 'react-router'
 import { UserContext } from '../../contexts/UserContext'
 
 export default function SignInForm(){
@@ -16,9 +15,6 @@ export default function SignInForm(){
   })
   const [errors, setErrors] = useState({})
 
-  // * Location variables
-  const navigate = useNavigate()
-
   // * Functions
   const handleSubmit = async (e) => {
     setErrors({})
@@ -27,7 +23,6 @@ export default function SignInForm(){
       const { data } = await signIn(formData)
       setToken(data.token)
       setUser(getUser())
-      navigate('/')
     } catch (error) {
       console.log(error)
       setErrors(error.response.data)
